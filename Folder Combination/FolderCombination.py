@@ -2,8 +2,8 @@ import os
 import re
 import shutil
 
-baseurl = r'C:\Users\jiangt6\Downloads\韩漫\诱惑第一季\1-38\\'
-resturl = r'C:\Users\jiangt6\Downloads\韩漫\诱惑第一季\1-38-combine\\'
+baseurl = r'C:\Users\jiangt6\Downloads\韩漫2\妖女之祸\1-42\\'
+resturl = r'C:\Users\jiangt6\Downloads\韩漫2\妖女之祸\1-42-combine\\'
 distDirList = os.listdir(baseurl)
 countnum = 1001
 
