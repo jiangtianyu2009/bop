@@ -2,16 +2,16 @@ import os
 import re
 import shutil
 
-baseurl = r'C:\Users\jiangt6\Downloads\韩漫2\妖女之祸\1-42\\'
-resturl = r'C:\Users\jiangt6\Downloads\韩漫2\妖女之祸\1-42-combine\\'
+baseurl = r'C:\Users\jiangt6\Downloads\韩漫\17种性幻想\1-63'
+resturl = r'C:\Users\jiangt6\Downloads\韩漫\17种性幻想\1-63-combine'
 distDirList = os.listdir(baseurl)
 countnum = 1001
 
 for distDir in distDirList:
-    filenames = os.listdir(baseurl + distDir)
+    filenames = os.listdir(baseurl + os.sep + distDir)
     print(distDir)
     print(filenames)
     for filename in filenames:
-        shutil.copy(baseurl + distDir + os.sep + filename,
-                    resturl + str(countnum) + '.jpg')
+        shutil.copy(baseurl + os.sep + distDir + os.sep + filename,
+                    resturl + os.sep + str(countnum) + '.jpg')
         countnum = countnum + 1

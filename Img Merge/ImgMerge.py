@@ -2,14 +2,15 @@ from PIL import Image
 import numpy as np
 import os
 import shutil
+from ImgResize import imgresize
 
-baseurl = r'C:\Users\jiangt6\Downloads\韩漫2\危险性游戏\1-25-combine'
-disturl = r'C:\Users\jiangt6\Downloads\韩漫2\危险性游戏\1-25-dst'
+baseurl = r'C:\Users\jiangt6\Downloads\test'
+disturl = r'C:\Users\jiangt6\Downloads\test-dst'
 files = os.listdir(baseurl)
 
-countr = 0
-ranger = 16
+ranger = 5
 nameer = 100
+countr = 0
 
 for file in files:
     if file in files[ranger * countr: ranger * countr + ranger]:
@@ -22,18 +23,19 @@ for file in files:
     shutil.copy(baseurl + os.sep + file, disturl +
                 os.sep + str(nameer) + os.sep + file)
 
-dstcounter = 800
+dstcounter = 6000
 dstdir = os.listdir(disturl)
 for dirr in dstdir:
     files = os.listdir(disturl + os.sep + dirr)
-    baseimg = Image.open(disturl + os.sep + dirr + os.sep + files[0])
-    sz = baseimg.size
+    baseimg = imgresize(Image.open(
+        disturl + os.sep + dirr + os.sep + files[0]))
     basemat = np.atleast_2d(baseimg)
     for file in files[1:]:
         print('Appending ' + file)
-        im = Image.open(disturl + os.sep + dirr + os.sep + file)
-        mat = np.atleast_2d(im)
-        basemat = np.append(basemat, mat, axis=0)
+        appendimg = imgresize(Image.open(
+            disturl + os.sep + dirr + os.sep + file))
+        appendmat = np.atleast_2d(appendimg)
+        basemat = np.append(basemat, appendmat, axis=0)
     report_img = Image.fromarray(basemat)
     report_img.save(disturl + os.sep + str(dstcounter) + '.jpg')
     print('Save Pic ' + str(dstcounter) + '.jpg')
