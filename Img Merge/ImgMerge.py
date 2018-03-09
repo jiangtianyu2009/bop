@@ -5,8 +5,8 @@ import os
 import shutil
 
 
-baseurl = r'C:\Users\jiangt6\Downloads\test'
-disturl = r'C:\Users\jiangt6\Downloads\test-dst'
+baseurl = r'C:\Users\jiangt6\Downloads\韩漫\恋爱辅助器\01-111-combine'
+disturl = r'C:\Users\jiangt6\Downloads\韩漫\恋爱辅助器\01-111-dst'
 files = os.listdir(baseurl)
 
 
