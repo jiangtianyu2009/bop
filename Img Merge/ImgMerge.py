@@ -5,8 +5,8 @@ import os
 import shutil
 
 
-baseurl = r'C:\Users\jiangt6\Downloads\韩漫\恋爱辅助器\01-111-combine'
-disturl = r'C:\Users\jiangt6\Downloads\韩漫\恋爱辅助器\01-111-dst'
+baseurl = r'C:\Users\jiangt6\Downloads\韩漫1\Desire King\01-53-combine'
+disturl = r'C:\Users\jiangt6\Downloads\韩漫1\Desire King\01-53-dst'
 files = os.listdir(baseurl)
 
 
@@ -21,13 +21,15 @@ for file in files:
 
     if sectionstartfile:
         print('Base Image ' + file)
-        baseimg = imgresize(Image.open(baseurl + os.sep + file))
+        baseimg = imgresize(Image.open(
+            baseurl + os.sep + file).convert('RGB'))
         curjpgdim = baseimg.size[1]
         basemat = np.atleast_2d(baseimg)
         sectionstartfile = False
     else:
         print('Appending Image ' + file)
-        appendimg = imgresize(Image.open(baseurl + os.sep + file))
+        appendimg = imgresize(Image.open(
+            baseurl + os.sep + file).convert('RGB'))
         curjpgdim = curjpgdim + appendimg.size[1]
         appendmat = np.atleast_2d(appendimg)
         basemat = np.append(basemat, appendmat, axis=0)
