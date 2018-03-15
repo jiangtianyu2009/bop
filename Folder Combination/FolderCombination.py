@@ -1,9 +1,19 @@
 import os
 import re
 import shutil
+import tkinter.filedialog
 
-baseurl = r'C:\Users\jiangt6\Downloads\韩漫1\Desire King\01-53'
-resturl = r'C:\Users\jiangt6\Downloads\韩漫1\Desire King\01-53-combine'
+root = tkinter.Tk()
+root.withdraw()
+dirname = tkinter.filedialog.askdirectory(
+    parent=root, initialdir=r'C:\jty\Pic', title='Please select a directory')
+if len(dirname) > 0:
+    print("You choosed %s" % dirname)
+    baseurl = dirname
+    resturl = dirname + '-combine'
+    if not os.path.exists(resturl):
+        os.mkdir(resturl)
+
 distDirList = os.listdir(baseurl)
 countnum = 1001
 

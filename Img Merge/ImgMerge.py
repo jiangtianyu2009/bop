@@ -3,15 +3,23 @@ from ImgResize import imgresize
 import numpy as np
 import os
 import shutil
+import tkinter.filedialog
+
+root = tkinter.Tk()
+root.withdraw()
+dirname = tkinter.filedialog.askdirectory(
+    parent=root, initialdir=r'C:\jty\Pic', title='Please select a directory')
+if len(dirname) > 0:
+    print("You choosed %s" % dirname)
+    baseurl = dirname
+    disturl = dirname + '-dst'
+    if not os.path.exists(disturl):
+        os.mkdir(disturl)
 
 
-baseurl = r'C:\Users\jiangt6\Downloads\韩漫1\Desire King\01-53-combine'
-disturl = r'C:\Users\jiangt6\Downloads\韩漫1\Desire King\01-53-dst'
 files = os.listdir(baseurl)
 
-
 dstcounter = 6000
-
 maxjpgdim = 50000
 curjpgdim = 0
 
