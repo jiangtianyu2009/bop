@@ -6,7 +6,7 @@ import tkinter.filedialog
 root = tkinter.Tk()
 root.withdraw()
 dirname = tkinter.filedialog.askdirectory(
-    parent=root, initialdir=r'C:\jty\Pic', title='Please select a directory')
+    parent=root, initialdir=r'C:\jty\HM', title='Please select a directory')
 if len(dirname) > 0:
     print("You choosed %s" % dirname)
     baseurl = dirname
