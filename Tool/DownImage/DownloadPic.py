@@ -6,9 +6,18 @@ import urllib.request
 import bs4
 import requests
 
-base_url = 'http://www.javlibrary.com/tw/vl_searchbyid.php?keyword='
-filterWord = "video_jacket_img"
+base_url = 'https://www.goldenshark.me/images/'
 srcDirList = [r'C:\jty\xunlei\TC']
+p = re.compile(r'(\D+)(\d+)')
+
+
+def addSep(filename):
+    fhalf = p.search(filename).group(1).upper()
+    mhalf = p.search(filename).group(2).upper()
+    lhalf = '.jpg'
+    distname = fhalf + '-' + mhalf + lhalf
+    return distname
+
 
 for srcDir in srcDirList:
     filenames = os.listdir(srcDir)
@@ -20,14 +29,12 @@ for srcDir in srcDirList:
         if os.path.isfile(destPicName):
             print(destPicName + ' already here.\n')
         else:
-            full_url = base_url + preFileName
-            response = requests.get(full_url)
-            soup = bs4.BeautifulSoup(response.text, "html.parser")
+            full_url = base_url + addSep(preFileName)
             try:
-                imgsrc = 'http:' + soup.find(id=filterWord)['src']
-                print(preFileName + "\n" + imgsrc)
+                print(preFileName + "\n" + full_url)
                 print(destPicName + "\n")
                 if not os.path.isfile(destPicName):
-                    urllib.request.urlretrieve(imgsrc, destPicName)
+                    urllib.request.urlretrieve(full_url, destPicName)
             except:
-                print('!!!!!!!!!!!!!! Can not find picture of ' + filename + '\n')
+                print('!!!!!!!!!!!!!! Can not find picture of ' +
+                      filename + ' !!!!!!!!!!!!!!\n')
