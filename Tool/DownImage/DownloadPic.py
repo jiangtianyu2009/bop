@@ -8,7 +8,7 @@ import requests
 
 base_url = 'http://www.javlibrary.com/tw/vl_searchbyid.php?keyword='
 filterWord = "video_jacket_img"
-srcDirList = [r'C:\jty\xunlei']
+srcDirList = [r'C:\jty\xunlei\TC']
 
 for srcDir in srcDirList:
     filenames = os.listdir(srcDir)
