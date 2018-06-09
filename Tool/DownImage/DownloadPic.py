@@ -7,7 +7,7 @@ import bs4
 import requests
 
 base_url = 'https://www.goldenshark.me/images/'
-srcDirList = [r'C:\jty\xunlei\TC']
+srcDirList = [r'C:\jtybackup\TC']
 p = re.compile(r'(\D+)(\d+)')
 
 

@@ -2,7 +2,7 @@ import os
 import re
 
 p = re.compile(r'(\D+\d+)(\w*)(.\w+)')
-distDirList = [r'C:\jty\xunlei\TC']
+distDirList = [r'C:\jtybackup\TC']
 
 for distDir in distDirList:
     filenames = os.listdir(distDir)
