@@ -15,7 +15,7 @@ for distDir in distDirList:
             filenameprefit = filenamepref
         filenamepost = filenameprefit.replace('-', '').replace('_', '')\
             .replace(' ', '').replace('.1080p', '').replace('.720p', '')\
-            .replace('[thz.la]', '').replace('[Thz.la]', '').replace('[HD]', '')\
+            .replace('[thz.tw]', '').replace('[thz.la]', '').replace('[Thz.la]', '').replace('[HD]', '')\
             .replace('cd1', 'A').replace('cd2', 'B')
         fhalf = p.search(filenamepost).group(1).upper()
         mhalf = p.search(filenamepost).group(2).upper()
