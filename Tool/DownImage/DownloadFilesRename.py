@@ -18,6 +18,7 @@ for distDir in distDirList:
             .replace('【ses23.com】', '')\
             .replace('[thz.tw]', '').replace('[Thz.tw]', '')\
             .replace('[thz.la]', '').replace('[Thz.la]', '')\
+            .replace('【thz.la】', '').replace('【Thz.la】', '')\
             .replace('[HD]', '')\
             .replace('cd1', 'A').replace('cd2', 'B')
         fhalf = p.search(filenamepost).group(1).upper()
