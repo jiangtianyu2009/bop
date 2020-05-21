@@ -11,7 +11,7 @@ int *intersect(int *nums1, int nums1Size, int *nums2, int nums2Size, int *return
     qsort(nums1, nums1Size, sizeof(int), cmpfunc);
     qsort(nums2, nums2Size, sizeof(int), cmpfunc);
     int i, j = 0;
-    int *result = malloc(sizeof(int));
+    int *result = (int *)malloc(sizeof(int));
     while (i < nums1Size && j < nums2Size)
     {
         if (*(nums1 + i) < *(nums2 + j))
