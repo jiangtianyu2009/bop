@@ -2,13 +2,13 @@ class Solution:
     def threeSum(self,  nums):
         temp_list = []
         nums = sorted(nums)
-        for index,  num in enumerate(nums):
+        for index, num in enumerate(nums):
             if nums[index + 1] == nums[index]:
                 break
             target = 0 - num
             two_nums = nums[index + 1:]
             numDict = {}
-            for index,  two_num in enumerate(two_nums):
+            for index, two_num in enumerate(two_nums):
                 if (target - two_num) not in numDict:
                     numDict[two_num] = index
                 else:
