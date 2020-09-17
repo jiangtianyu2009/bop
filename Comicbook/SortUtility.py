@@ -1,3 +1,6 @@
+import random
+
+
 class Sort:
     def __init__(self):
         pass
@@ -17,4 +20,15 @@ class Sort:
         return nums
 
     def quickSort(self, unsortedlist):
-        pass
+        if len(unsortedlist) <= 1:
+            return unsortedlist
+        pivotIndex = random.randint(0, len(unsortedlist) - 1)
+        pivot = unsortedlist[pivotIndex]
+        unsortedlist.remove(unsortedlist[pivotIndex])
+        left, right = [], []
+        for num in unsortedlist:
+            if num < pivot:
+                left.append(num)
+            else:
+                right.append(num)
+        return self.quickSort(left) + [pivot] + self.quickSort(right)
