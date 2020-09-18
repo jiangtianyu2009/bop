@@ -1,7 +1,7 @@
 import random
 
 
-class Sort:
+class SortUtility:
     def __init__(self):
         pass
 
