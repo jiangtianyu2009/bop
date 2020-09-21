@@ -1,7 +1,7 @@
 import random
 
 
-class SortUtility:
+class Sort:
     def __init__(self):
         pass
 
@@ -17,14 +17,14 @@ class SortUtility:
                         nums[i] = nums[i] - nums[i - 1]
         return nums
 
-    def quickSort(self, unsortedlist):
-        if len(unsortedlist) <= 1:
-            return unsortedlist
-        pivotIndex = random.randint(0, len(unsortedlist) - 1)
-        pivot = unsortedlist[pivotIndex]
-        unsortedlist.remove(unsortedlist[pivotIndex])
+    def quickSort(self, nums):
+        nums = nums[:]
+        if len(nums) <= 1:
+            return nums
+        pivot = nums[random.randint(0, len(nums) - 1)]
+        nums.remove(pivot)
         left, right = [], []
-        for num in unsortedlist:
+        for num in nums:
             if num < pivot:
                 left.append(num)
             else:
