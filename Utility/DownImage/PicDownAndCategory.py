@@ -9,7 +9,7 @@ import bs4
 import requests
 
 base_url = 'https://avmoo.cyou/cn/search/'
-srcDirList = [r'F:\tempf\TC', r'G:\tempg\TC']
+srcDirList = [r'H:\temp\TC']
 
 
 def getImageName(fileName):
@@ -44,6 +44,8 @@ def getAvDetail(fileNamePrefix):
         act_name = detail_soup.find(
             'a', {'class': "avatar-box"}).text.strip()
         print('Actor name is: ' + act_name)
+    except Exception as e:
+        print('Error: ' + str(e))
 
     av_detail_dict['fileNamePrefix'] = fileNamePrefix
     av_detail_dict['img_src'] = img_src
