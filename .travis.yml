@@ -6,3 +6,4 @@ install:
 script:
   - curl https://nhentai.net/language/chinese/
   - curl https://nhentai.net/tag/full-color/
+  - curl https://btsow.one/search/SSIS-145
