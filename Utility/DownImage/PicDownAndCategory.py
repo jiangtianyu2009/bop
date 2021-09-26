@@ -5,11 +5,12 @@ import shutil
 import threading
 import time
 import urllib.request
+
 import bs4
 import requests
 
-base_url = 'https://avmoo.cyou/cn/search/'
-srcDirList = [r'H:\temp\TC', r'I:\temp\TC']
+base_url = 'https://avmoo.casa/cn/search/'
+srcDirList = [r'I:\temp\TC']
 
 
 def getImageName(fileName):
@@ -31,7 +32,7 @@ def getAvDetail(fileNamePrefix):
     search_soup = bs4.BeautifulSoup(
         search_response.text, "html.parser")
     # Get Detail Page
-    detail_url = search_soup.find(
+    detail_url = 'https:' + search_soup.find(
         'a', {'class': "movie-box"})['href']
     print('Detail URL is: ' + detail_url)
     detail_response = requests.get(detail_url)
