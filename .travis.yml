@@ -6,8 +6,5 @@ install:
 script:
 #  - curl https://nhentai.net/language/chinese/
 #  - curl https://nhentai.net/tag/full-color/
-  - curl https://btsow.one/search/MNSE-019
-  - curl https://btsow.one/search/ZEX-406
-  - curl https://btsow.one/search/IPX-708
-  - curl https://btsow.one/search/IPX-743
-  - curl https://btsow.one/search/SHKD-955
+  - curl https://btsow.one/search/IPX-707
+  - curl https://btsow.one/search/IPX-725
