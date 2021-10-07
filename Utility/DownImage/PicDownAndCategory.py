@@ -102,6 +102,6 @@ if __name__ == '__main__':
         fileNames = removeHiddenFiles(os.listdir(srcDir))
         for fileName in fileNames:
             downloadImage(fileName)
-        fileNames = removeHiddenFiles(os.listdir(srcDir))
-        for fileName in fileNames:
-            categoryImage(fileName)
+        # fileNames = removeHiddenFiles(os.listdir(srcDir))
+        # for fileName in fileNames:
+        #     categoryImage(fileName)
