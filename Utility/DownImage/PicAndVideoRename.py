@@ -2,7 +2,7 @@ import os
 import re
 
 p = re.compile(r'(\D+\d+)(\w*)(.\w+)')
-dstDirList = [r'I:\temp\TC', r'W:\TC_temp', r'X:\TC_temp']
+dstDirList = [r'I:\temp\TC', r'G:\temp\TC', r'W:\TC_temp', r'X:\TC_temp']
 
 for distDir in dstDirList:
     filenames = os.listdir(distDir)
@@ -17,7 +17,7 @@ for distDir in dstDirList:
         filenamepost = filenameprefit.replace('-', '').replace('_', '')\
             .replace(' ', '').replace('.1080p', '').replace('.720p', '')\
             .replace('[thz.la]', '').replace('[Thz.la]', '').replace('[HD]', '')\
-            .replace('cd1', 'A').replace('cd2', 'B')
+            .replace('cd1', 'A').replace('cd2', 'B').replace('hhd800.com@', '')
         fhalf = p.search(filenamepost).group(1).upper()
         mhalf = p.search(filenamepost).group(2).upper()
         lhalf = p.search(filenamepost).group(3).lower()
