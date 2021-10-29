@@ -10,7 +10,8 @@ import bs4
 import requests
 
 base_url = 'https://avmoo.casa/cn/search/'
-srcDirList = [r'I:\temp\TC', r'G:\temp\TC']
+srcDirList = [r'F:\temp\TC', r'G:\temp\TC', r'H:\temp\TC',
+              r'I:\temp\TC', r'W:\TC_temp', r'X:\TC_temp']
 
 
 def getImageName(fileName):
@@ -91,13 +92,15 @@ def categoryImage(fileName):
 
 
 def removeHiddenFiles(fileNames):
+    print(fileNames)
     if 'desktop.ini' in fileNames:
         fileNames.remove('desktop.ini')
+    if 'Thumbs.db' in fileNames:
+        fileNames.remove('Thumbs.db')
     return fileNames
 
 
 if __name__ == '__main__':
-
     for srcDir in srcDirList:
         fileNames = removeHiddenFiles(os.listdir(srcDir))
         for fileName in fileNames:
