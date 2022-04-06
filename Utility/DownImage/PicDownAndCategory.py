@@ -9,8 +9,8 @@ import urllib.request
 import bs4
 import requests
 
-base_url = 'https://avmoo.casa/cn/search/'
-srcDirList = [r'F:\temp\TC', r'G:\temp\TC', r'H:\temp\TC',
+base_url = 'https://avmoo.click/cn/search/'
+srcDirList = [r'F:\temp\TC', r'H:\temp\TC',
               r'I:\temp\TC', r'W:\TC_temp', r'X:\TC_temp']
 
 
