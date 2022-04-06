@@ -2,7 +2,7 @@ import os
 import re
 
 p = re.compile(r'(\D+\d+)(\w*)(.\w+)')
-dstDirList = [r'F:\temp\TC', r'G:\temp\TC', r'H:\temp\TC',
+dstDirList = [r'F:\temp\TC', r'H:\temp\TC',
               r'I:\temp\TC', r'W:\TC_temp', r'X:\TC_temp']
 
 for distDir in dstDirList:
@@ -10,6 +10,8 @@ for distDir in dstDirList:
     print(filenames)
     if 'desktop.ini' in filenames:
         filenames.remove('desktop.ini')
+    if 'Thumbs.db' in filenames:
+        filenames.remove('Thumbs.db')
     for filenamepref in filenames:
         if filenamepref.find('_') > 0:
             filenameprefit = filenamepref[filenamepref.index('_'):]
