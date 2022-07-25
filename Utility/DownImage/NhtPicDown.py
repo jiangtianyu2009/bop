@@ -10,7 +10,7 @@ import bs4
 import requests
 from click import command
 
-base_url = 'https://i3.nhentai.net/galleries/'
+base_url = 'https://i7.nhentai.net/galleries/'
 srcDirList = [r'H:\temp\TC']
 srcDir = r'H:\temp'
 
@@ -20,10 +20,10 @@ def downloadImage(comic_id, num):
     for i in range(1, num + 1):
         imgNamePrefix = str(i)
         fileNamePrefix = str(i).zfill(3)
-
+        # Create dir if not exist
         if not os.path.isdir(srcDir + os.sep + comic_id):
             os.makedirs(srcDir + os.sep + comic_id)
-
+        # Build desti file name and path
         destImagePath = srcDir + os.sep + comic_id + os.sep + fileNamePrefix + '.jpg'
         imgSrc = base_url + comic_id + '/' + imgNamePrefix + '.jpg'
         # Check Whether Image Exists
@@ -43,7 +43,7 @@ def downloadImage(comic_id, num):
                     urllib.request.install_opener(opener)
                     urllib.request.urlretrieve(imgSrc, destImagePath)
             except:
-                print(destImagePath + 'download failed!')
+                print(destImagePath + ' download failed!')
             print('=======================================')
 
 
