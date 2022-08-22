@@ -10,9 +10,8 @@ import bs4
 import requests
 from click import command
 
-base_url = 'https://i7.nhentai.net/galleries/'
-srcDirList = [r'H:\temp\TC']
-srcDir = r'H:\temp'
+base_url = 'https://i3.nhentai.net/galleries/'
+srcDir = r'H:\Download'
 
 
 def download_image(args_item):
@@ -55,8 +54,8 @@ def thread_download(args_list):
 
 
 if __name__ == '__main__':
-    comic_id = 1859331
-    pic_count = 135
+    comic_id = 2151997
+    pic_count = 23
 
     # Create dir if not exist
     if not os.path.isdir(srcDir + os.sep + str(comic_id)):
