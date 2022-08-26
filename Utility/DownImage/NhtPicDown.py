@@ -45,7 +45,7 @@ def download_image(args_item):
 
 def thread_download(args_list):
     try:
-        pool = multiprocessing.Pool()
+        pool = multiprocessing.Pool(10)
         res = pool.map(download_image, args_list)
         pool.close()
         pool.join()
@@ -54,8 +54,8 @@ def thread_download(args_list):
 
 
 if __name__ == '__main__':
-    comic_id = 2151997
-    pic_count = 23
+    comic_id = 2258593
+    pic_count = 48
 
     # Create dir if not exist
     if not os.path.isdir(srcDir + os.sep + str(comic_id)):
