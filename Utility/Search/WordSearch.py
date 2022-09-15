@@ -1,13 +1,17 @@
-import os
 import multiprocessing
+import os
+import shutil
 
 
 class WordSearch:
     def findWord(self, args_item):
-        (word, file_path) = args_item
-        with open(file_path) as f:
+        (word, folder, filename) = args_item
+        with open(folder + os.sep + filename) as f:
             if word in f.read():
-                print("Found " + word + " in " + file_path)
+                print("Found " + word + " in " + filename)
+                if not os.path.exists(folder + os.sep + word):
+                    os.mkdir(folder + os.sep + word)
+                shutil.copy(folder + os.sep + filename, folder + os.sep + word)
 
     def thread_search(self, args_list):
         try:
@@ -15,16 +19,18 @@ class WordSearch:
             res = pool.map(self.findWord, args_list)
             pool.close()
             pool.join()
-        except:
-            print("Error: unable to start thread")
+        except Exception as err:
+            print("Error: Exception raised")
+            print(err)
 
 
 if __name__ == '__main__':
-    word = r'405F'
+    word = r'405F07'
     folder = r'C:\Users\jiang\Desktop\test_data'
-    filenames = os.listdir(folder)
 
     args_list = []
+    filenames = os.listdir(folder)
     for filename in filenames:
-        args_list.append((word, folder + os.sep + filename))
+        if os.path.isfile(folder + os.sep + filename):
+            args_list.append((word, folder, filename))
     WordSearch().thread_search(args_list)
