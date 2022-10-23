@@ -1,16 +1,12 @@
 import os
-import random
-import re
 import shutil
-import threading
-import time
 import urllib.request
 
 import bs4
 import requests
 
 base_url = 'https://avmoo.click/cn/search/'
-srcDirList = [r'F:\temp\TC']
+srcDirList = [r'H:\Download\Leaked']
 
 
 def getImageName(fileName):
@@ -105,5 +101,5 @@ if __name__ == '__main__':
         for fileName in fileNames:
             downloadImage(fileName)
         fileNames = removeHiddenFiles(os.listdir(srcDir))
-        for fileName in fileNames:
-            categoryImage(fileName)
+        # for fileName in fileNames:
+        #     categoryImage(fileName)
