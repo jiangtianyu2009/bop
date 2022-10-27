@@ -6,7 +6,7 @@ import bs4
 import requests
 
 base_url = 'https://avmoo.click/cn/search/'
-srcDirList = [r'H:\Download\Leaked']
+srcDirList = [r'H:\Download\TC']
 
 
 def getImageName(fileName):
