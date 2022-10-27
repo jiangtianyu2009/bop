@@ -2,7 +2,7 @@ import os
 import re
 
 p = re.compile(r'(\D+\d+)(\w*)(.\w+)')
-dstDirList = [r'H:\Download\Leaked']
+dstDirList = [r'H:\Download\TC']
 
 for distDir in dstDirList:
     filenames = os.listdir(distDir)
