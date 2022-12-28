@@ -6,7 +6,8 @@ import bs4
 import requests
 
 base_url = 'https://avmoo.click/cn/search/'
-srcDirList = [r'H:\Download\TC']
+srcDirList = [r'H:\Download\TC', r'G:\Download\TC',
+              r'F:\Download\TC', r'E:\Download\TC']
 
 
 def getImageName(fileName):
@@ -101,5 +102,5 @@ if __name__ == '__main__':
         for fileName in fileNames:
             downloadImage(fileName)
         fileNames = removeHiddenFiles(os.listdir(srcDir))
-        for fileName in fileNames:
-            categoryImage(fileName)
+        # for fileName in fileNames:
+        #     categoryImage(fileName)
