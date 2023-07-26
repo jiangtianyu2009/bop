@@ -1,3 +1,4 @@
+import multiprocessing
 import os
 import random
 import re
@@ -5,13 +6,13 @@ import shutil
 import threading
 import time
 import urllib.request
-import multiprocessing
+
 import bs4
 import requests
 from click import command
 
-base_url = 'https://i3.nhentai.net/galleries/'
-srcDir = r'H:\Download'
+base_url = 'https://i5.nhentai.net/galleries/'
+srcDir = r'D:\Download\Comic'
 
 
 def download_image(args_item):
@@ -54,7 +55,7 @@ def thread_download(args_list):
 
 
 if __name__ == '__main__':
-    comic_id = 2258593
+    comic_id = 2578370
     pic_count = 48
 
     # Create dir if not exist
