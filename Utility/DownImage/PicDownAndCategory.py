@@ -5,9 +5,10 @@ import urllib.request
 import bs4
 import requests
 
-base_url = 'https://avmoo.click/cn/search/'
+base_url = 'https://avmoo.cfd/cn/search/'
 srcDirList = [r'H:\Download\TC', r'G:\Download\TC',
-              r'F:\Download\TC', r'E:\Download\TC']
+              r'F:\Download\TC', r'E:\Download\TC',
+              r'D:\Download\TC']
 
 
 def getImageName(fileName):
@@ -98,9 +99,12 @@ def removeHiddenFiles(fileNames):
 
 if __name__ == '__main__':
     for srcDir in srcDirList:
-        fileNames = removeHiddenFiles(os.listdir(srcDir))
-        for fileName in fileNames:
-            downloadImage(fileName)
-        fileNames = removeHiddenFiles(os.listdir(srcDir))
-        # for fileName in fileNames:
-        #     categoryImage(fileName)
+        try:
+            fileNames = removeHiddenFiles(os.listdir(srcDir))
+            for fileName in fileNames:
+                downloadImage(fileName)
+            fileNames = removeHiddenFiles(os.listdir(srcDir))
+            # for fileName in fileNames:
+            #     categoryImage(fileName)
+        except Exception as e:
+            print(e)
