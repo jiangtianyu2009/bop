@@ -3,7 +3,7 @@ import re
 
 p = re.compile(r'(\D+\d+)(\w*)(.\w+)')
 dstDirList = [r'H:\Download\TC', r'G:\Download\TC',
-              r'F:\Download\TC', r'E:\Download\TC']
+              r'F:\Download\TC', r'E:\Download\TC', r'D:\Download\TC']
 
 for distDir in dstDirList:
     filenames = os.listdir(distDir)
