@@ -5,9 +5,9 @@ import urllib.request
 import bs4
 import requests
 
-base_url = 'https://avmoo.click/cn/search/'
+base_url = 'https://avmoo.online/cn/search/'
 srcDirList = [r'H:\Download\TC', r'G:\Download\TC',
-              r'F:\Download\TC', r'E:\Download\TC']
+              r'F:\Download\TC', r'E:\Download\TC', r'D:\Download\TC']
 
 
 def getImageName(fileName):
